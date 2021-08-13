@@ -17,6 +17,7 @@ export const Sale = (props) => {
                                     <Link to={`/Detail-product/${product._id}`} className="sale-card__image">
                                         <img
                                             src={product.urls[0].url}
+                                            alt={product.title}
                                         />
                                     </Link>
                                     <div className="sale-card__title">

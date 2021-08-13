@@ -28,7 +28,7 @@ export const Featured = (props) => {
                                 </Col>
                                 <Col lg={6} md={6}>
                                     <div className="featured-inside_image">
-                                        <img src={product.urls[0].url}></img>
+                                        <img src={product.urls[0].url} alt={product.title} ></img>
                                     </div>
                                 </Col>
                             </Row>
@@ -36,7 +36,7 @@ export const Featured = (props) => {
                     </Col>
                     <Col lg={4} md={4}>
                         <div className="featured-inside_wrap-2">
-                            <img src="https://demo.tokopress.com/bookie/wp-content/uploads/sites/7/2016/06/home1-featured-02.jpg" />
+                            <img src="https://demo.tokopress.com/bookie/wp-content/uploads/sites/7/2016/06/home1-featured-02.jpg" alt="Ảnh" />
                             <div>
                                 <span>FEATURE CATEGORY</span>
                                 <p>A Complete Idiot Guide to Programming</p>

@@ -12,10 +12,12 @@ export const Blog = (props) => {
                 <Row lg={4}>
                     {posts?.map((post, index) => {
                         if (index < 4) return (
-                            <Col sm={6} xs={12} md={6}>
+                            <Col sm={6} xs={12} md={6} key={post._id}>
                                 <div className="blog-card">
                                     <Link to={`/Detail-post/${post._id}`} className="blog-link">
-                                        <img src={post.image} />
+                                        <img
+                                            alt={post.title}
+                                            src={post.image} />
                                         <p >{post.title}</p>
                                     </Link>
                                     <p className="blog-date">{new Date(post.createdAt).toLocaleDateString()}</p>
@@ -27,7 +29,7 @@ export const Blog = (props) => {
                 </Row>
             </Container>
             <Container>
-                <img className="wbp" src="https://ahessblog.files.wordpress.com/2008/05/banner_oldbooks2.jpg" />
+                <img className="wbp" src="https://ahessblog.files.wordpress.com/2008/05/banner_oldbooks2.jpg" alt="Ảnh" />
             </Container>
         </section>
 

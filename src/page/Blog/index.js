@@ -47,10 +47,10 @@ export const Blog = () => {
                                         <p className="blog-post_date">Ngày đăng: {new Date(post.createdAt).toLocaleDateString()}</p>
                                         <h2 className="blog-post_title">{post.title}</h2>
                                         <p className="blog-post_author">Đăng bởi {`${post.author.firstName} ${post.author.lastName}`}</p>
-                                        <img className="blog-post_img" src={post.image} />
+                                        <img className="blog-post_img" src={post.image} alt={post.title} />
                                     </div>
                                     <div className="blog-post_content">
-                                        <p className="blog-post_description"><div dangerouslySetInnerHTML={createMarkup(post.content)}></div></p>
+                                        <div className="blog-post_description"><div dangerouslySetInnerHTML={createMarkup(post.content)}></div></div>
                                         <Link to={`/Detail-post/${post._id}`}>Continue Reading →</Link>
                                     </div>
                                 </article>

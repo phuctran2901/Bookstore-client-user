@@ -71,6 +71,7 @@ export const Profile = (props) => {
                     <div className="profile-avatar">
                         <img
                             src={image}
+                            alt="Ảnh đại diện"
                         />
                         {statusProfile === true ? <p onClick={() => fileRef.current.click()}>Chọn Ảnh</p> : ""}
                         <input

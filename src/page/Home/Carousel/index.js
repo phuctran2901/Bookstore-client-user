@@ -15,6 +15,7 @@ export const CarouselP = () => {
                 <img
                     className="carousel-img"
                     src="http://vietchiase.net/wp-content/uploads/2020/05/review-sach-hay-5-centimet-tren-giay.jpg"
+                    alt="5 centimet trên giây"
                 />
                 <div className="carousel-content">
                     <p>Sách mới</p>
@@ -24,19 +25,21 @@ export const CarouselP = () => {
             </div>
             <div>
                 <img
+                    alt="3 Kinh Nghiệm Viết Sách Thành Công Sau 10 Năm Đúc Rút..."
                     className="carousel-img"
                     src="https://demo.tokopress.com/bookie/wp-content/uploads/sites/7/2016/06/slider-03.jpg"
                 />
                 <div className="carousel-content">
                     <p>3 Kinh Nghiệm Viết Sách Thành Công Sau 10 Năm Đúc Rút...</p>
                     <h1>Bài viết mới nhất</h1>
-                    <a>Chi tiết</a>
+                    <Link to="/Detail-post/60f01bb67b21f8141067a734">Chi tiết</Link>
                 </div>
             </div>
             <div>
                 <img
                     className="carousel-img"
                     src="https://demo.tokopress.com/bookie/wp-content/uploads/sites/7/2016/06/slider-02.jpg"
+                    alt="Nghệ thuật tinh tế của việc đếch quan tâm | Mark Manson"
                 />
                 <div className="carousel-content">
                     <p>Nghệ thuật tinh tế của việc đếch quan tâm | Mark Manson</p>

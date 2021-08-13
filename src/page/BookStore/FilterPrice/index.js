@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { formatNumber } from "../../../helpers/formatNumber";
 import InputRange from 'react-input-range';
 import 'react-input-range/lib/css/index.css';
 export const FilterPrice = (props) => {

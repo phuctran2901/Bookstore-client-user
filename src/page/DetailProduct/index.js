@@ -5,16 +5,17 @@ import { BsStarHalf, BsStarFill } from 'react-icons/bs';
 import { Category } from '../../components/Category';
 import { useDispatch, useSelector } from 'react-redux';
 import { InnerImageZoom } from 'react-inner-image-zoom';
+import { Link } from 'react-router-dom';
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css';
 import {
     getOneProductRequest,
     addReviewRequest,
-    getProductRelated,
     addProductToCartRequest,
     toggleCart,
     addCart,
     setSubTotalCart,
-    getProductAlsoLike
+    getProductAlsoLike,
+    searchProductByField
 } from '../../actions/actionProducts.js';
 import { toast } from 'react-toastify';
 import { toastConfig } from '../../constants/configToast';
@@ -66,6 +67,9 @@ export const DetailProduct = () => {
         } else {
             toast("Hãy đăng nhập để thêm review", toastConfig);
         }
+    }
+    const filterProductByType = (idType) => {
+        searchProductByField(dispatch, { types: idType, title: "" })
     }
     const addProductToCart = () => {
         if (user._id) {
@@ -148,7 +152,7 @@ export const DetailProduct = () => {
                                     </div>
                                     <div className="product-type">
                                         <span>Loại sách: </span>
-                                        <a href="#">{product?.types?.name}</a>
+                                        <Link to="/Bookstore" onClick={() => filterProductByType(product?.types._id)}>{product?.types?.name}</Link>
                                     </div>
                                 </div>
                             </Col>

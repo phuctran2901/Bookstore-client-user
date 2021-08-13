@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 export const Auth = () => {
     const isLoading = useSelector(state => state.loading.loadingauth);
-    console.log(isLoading);
     const [status, setStatus] = useState(false);
     const history = useHistory();
     const dispatch = useDispatch();

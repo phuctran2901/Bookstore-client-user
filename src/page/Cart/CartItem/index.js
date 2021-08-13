@@ -35,7 +35,10 @@ export const CartItem = (props) => {
                 <span></span>
             </span>
             <div className="cart-thumnail">
-                <img src={cart?.product?.urls[0]?.url} />
+                <img
+                    src={cart?.product?.urls[0]?.url}
+                    alt={cart.product?.title}
+                />
             </div>
             <div className="cart-content">
                 <Link className="cart-name">{cart?.product.title}</Link>

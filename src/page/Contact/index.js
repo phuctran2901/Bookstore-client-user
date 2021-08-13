@@ -1,4 +1,4 @@
-import { Col, Container, Row, Toast } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 import { Button } from "../../components/Button"
 import { AiFillPhone, AiTwotoneMail, AiFillFacebook } from 'react-icons/ai';
 import { HiLocationMarker } from 'react-icons/hi';
@@ -62,7 +62,7 @@ export const Contact = () => {
                                 </div>
                                 <div>
                                     <span><AiFillFacebook /></span>
-                                    <a href="#">Hoàng Phúc</a>
+                                    <a href="https://www.facebook.com/profile.php?id=100010467708316">Hoàng Phúc</a>
                                 </div>
                                 <div>
                                     <span><BiHelpCircle /></span>
@@ -74,7 +74,7 @@ export const Contact = () => {
                                 </div>
                                 <div>
                                     <span><CgWebsite /></span>
-                                    <a href="">My resume</a>
+                                    <a href="https://phuctran2901.github.io/Portfolio-cv/">My resume</a>
                                 </div>
                             </div>
                         </Col>

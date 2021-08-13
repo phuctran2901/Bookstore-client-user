@@ -62,7 +62,7 @@ export const Card = (props) => {
                 <div className="book-image_wrap">
                     <img
                         src={product.urls[0].url}
-                        alat={product.title}
+                        alt={product.title}
                     />
                 </div>
                 <div className="book-content_wrap">

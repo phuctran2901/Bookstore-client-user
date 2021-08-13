@@ -1,5 +1,4 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import { BsStarHalf, BsStarFill } from 'react-icons/bs';
 import Skeleton from 'react-loading-skeleton';
 export const SkeletonProduct = () => {
     return (
@@ -22,7 +21,6 @@ export const SkeletonProduct = () => {
                             <div className="product-offer-box">
                                 <div className="product-offer__price">
                                     <Skeleton />
-
                                 </div>
                                 <div className="product-quantity">
                                     <Skeleton />

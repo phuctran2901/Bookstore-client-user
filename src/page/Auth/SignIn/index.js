@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Spinner } from '../../../components/Spinner';
 export const SignIn = (props) => {
     const { isLoading } = props;
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const [typeInput, setTypeInput] = useState(false);
     const changeTypeInput = () => {
         setTypeInput(!typeInput);

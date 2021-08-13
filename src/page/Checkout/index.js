@@ -15,7 +15,7 @@ import { updateAllCartRequest, resetCart } from "../../actions/actionProducts";
 export const Checkout = () => {
     const history = useHistory();
     const dispatch = useDispatch();
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const user = useSelector(state => state.user);
     const [listCity, setListCity] = useState([]);
     const [listDistrict, setListDistrict] = useState([]);

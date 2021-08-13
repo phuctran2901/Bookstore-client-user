@@ -1,7 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteProductInCartRequest, resetCart, updateAllCartRequest, updateOneCart } from "../../actions/actionProducts";
+import { deleteProductInCartRequest, updateAllCartRequest, updateOneCart } from "../../actions/actionProducts";
 import { CartItem } from './CartItem';
 import "./index.css";
 import { Loader } from '../../components/Loader';

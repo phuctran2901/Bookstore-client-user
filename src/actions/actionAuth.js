@@ -28,7 +28,6 @@ export const signIn = (history, dispatch, value) => {
                 sessionStorage.setItem("lastName", data.user.lastName);
                 sessionStorage.setItem("image", data.user.image);
                 sessionStorage.setItem("userID", data.user._id);
-                console.log(data.user)
                 dispatch(isLoadingAuth(false));
 
                 history.goBack();
@@ -75,7 +74,6 @@ export const getCurrentUser = (dispatch) => {
                     dispatch(getCart(data.user.cart));
                     dispatch(setSubTotalCart(data.subTotal));
                     sessionStorage.setItem("userID", data.user._id);
-                    console.log(data.user)
                 }
                 else dispatch(setUser(null));
             })

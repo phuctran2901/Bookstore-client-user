@@ -74,7 +74,7 @@ export const OrderDetail = (props) => {
                     {orderDetail.productDetail.map(product => {
                         return (
                             <div className="order-detail" key={product.productID._id}>
-                                <img style={{ width: "70px", height: "70px" }} src={product.productID.urls[0].url} />
+                                <img style={{ width: "70px", height: "70px" }} src={product.productID.urls[0].url} alt={product.productID.title} />
                                 <div className="order-title">
                                     <p>{product.productID.title}</p>
                                     <div className="order-title_d">

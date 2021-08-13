@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { AiOutlineLeft, AiOutlineRight, AiFillCloseCircle } from 'react-icons/ai';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import { Comment } from "./comment";
 import { createMarkup } from '../../helpers/createMarkup';
 import { useParams } from "react-router";
@@ -58,7 +58,6 @@ export const DetailPost = () => {
     const onDeleteComment = (idCmt, idPost) => {
         deleteCommentRequest(dispatch, idCmt, idPost);
     }
-    console.log(post);
     return (
         <div className="blog-detail">
             <Container>
@@ -71,7 +70,7 @@ export const DetailPost = () => {
                                     <p className="blog-post_date">Ngày đăng: {new Date(post.createdAt).toLocaleDateString()}</p>
                                     <h2 className="blog-post_title">{post.title}</h2>
                                     <p className="blog-post_author">Đăng bởi {`${post?.author?.firstName} ${post?.author?.lastName}`}</p>
-                                    <img className="blog-post_img" src={post?.image} />
+                                    <img className="blog-post_img" src={post?.image} alt={post.title} />
                                 </div>
                                 <div className="blog-post_content">
                                     <div className="content" dangerouslySetInnerHTML={createMarkup(post.content)}></div>
@@ -109,7 +108,6 @@ export const DetailPost = () => {
                                 <h2 className="blog-comment_title">{comments.reduce((t, c) => ++t + c?._id?.reply?.length, 0)} bình luận với “{post.title}”</h2>
                                 <ul className="blog-comment_list">
                                     {comments.map(cmt => {
-                                        console.log(cmt)
                                         return (
                                             <li className="blog-comment_item" key={cmt._id._id}>
                                                 <img src={cmt._id?.author.image} alt="Ảnh đại diện" />
@@ -131,7 +129,7 @@ export const DetailPost = () => {
                                                     <p
                                                         onClick={() => setShowForm(cmt._id._id)}
                                                         className="blog-comment_replyBtn">Reply</p>
-                                                    {cmt._id._id == showForm ? <Comment
+                                                    {cmt._id._id === showForm ? <Comment
                                                         idCmt={cmt._id._id}
                                                         closeButton={true}
                                                         loadingCmt={loadingCmt}

@@ -1,19 +1,20 @@
 import { useEffect, useState } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import "./index.css";
-import { FiEdit, FiUser, FiSearch } from 'react-icons/fi';
+import { FiEdit, FiUser } from 'react-icons/fi';
 import { IoNewspaperOutline } from 'react-icons/io5';
 import { Profile } from './Profile';
-import { OrderTitle } from "../../components/OrderTitle";
 import { Orders } from "./Orders";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { toastConfig } from "../../constants/configToast";
 import { updateUserRequest } from '../../actions/actionAuth';
 import { Loader } from '../../components/Loader';
+import { useHistory } from 'react-router-dom';
 import callAPI from '../../untils/callAPI';
 import { OrderDetail } from './OrderDetail';
 export const Account = () => {
+    const history = useHistory();
     const user = useSelector(state => state.user);
     const [statusProfile, setStatusProfile] = useState(false);
     const [listOrder, setListOrder] = useState([]);
@@ -36,6 +37,8 @@ export const Account = () => {
                 setListOrder(data.orders);
                 setOrderTotal(data.ordersTotal);
             });
+        } else {
+            history.push("/");
         }
     }, [user, statusOrder])
     const isEmptyObject = (obj) => {
@@ -140,7 +143,7 @@ export const Account = () => {
                     <Col lg={3}>
                         <div className="account-control">
                             <div className="control-avatar">
-                                <img src={user.image} />
+                                <img src={user.image} alt={user._id} />
                                 <div>
                                     <p className="control-title">Trần Hoàng Phúc</p>
                                     <p className="control-edit"><FiEdit />Sửa hồ sơ</p>

@@ -47,12 +47,13 @@ export const Header = () => {
         return (
             <Route
                 path={to}
-                key={to}
                 exact={activeOnlyWhenExact}
                 children={({ match }) => {
                     var active = match ? "active" : '';
                     return (
                         <li onClick={isClickFunc}
+
+                            key={label + "1"}
                             className={`navbar-item ${active}`}>
                             <Link to={to}>{label}</Link>
                         </li>
@@ -71,10 +72,10 @@ export const Header = () => {
             <Container>
                 <div className="navbar-wrap">
                     <h1 className="header-logo">
-                        <a href="#" className="header-logo__link">
+                        <Link to="/" className="header-logo__link">
                             <div className="header-logo__text">Bookie</div>
                             <p className="header-logo-description">Đam mê sách</p>
-                        </a>
+                        </Link>
                     </h1>
                     <nav className={`header-navbar ${isClickMenu ? "active" : ""}`}>
                         <ul className="navbar-list">
@@ -108,6 +109,7 @@ export const Header = () => {
                             {Object.getOwnPropertyNames(user).length !== 0 ? <div onClick={() => setSt(!st)} className="header-account">
                                 <img
                                     src={user.image || `https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg`}
+                                    alt={user._id}
                                 />
                                 <BsChevronDown
                                     fontWeight="bold"
@@ -115,20 +117,20 @@ export const Header = () => {
                                     color="white"
                                 />
                                 {st ? <ul className="header-account_settings">
-                                    {user.role === "admin" ? <li><a href="">Dashboard</a></li> : ""}
+                                    {user.role === "admin" ? <li><a href="https://phuctran-bookstore-dashboard.herokuapp.com/login">Dashboard</a></li> : ""}
                                     <li>
-                                        <a href="#">
+                                        <Link to="/My-account">
                                             Đơn hàng
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="#">Thông tin cá nhân</a>
+                                        <Link to="/My-account">Thông tin cá nhân</Link>
                                     </li>
                                     <li>
-                                        <a href="#">Đổi mật khẩu</a>
+                                        <Link to="/My-account">Đổi mật khẩu</Link>
                                     </li>
                                     <li onClick={() => signOut(dispatch)}>
-                                        <a href="#">Đăng xuất</a>
+                                        Đăng xuất
                                     </li>
                                 </ul> : ""}
                             </div>

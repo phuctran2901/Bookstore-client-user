@@ -1,5 +1,6 @@
 import './index.css';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 export const Title = () => {
     const history = useHistory();
     const findIndexByString = () => {
@@ -20,7 +21,7 @@ export const Title = () => {
         <div className="page-title">
             <h2>{history.location.pathname.slice(1, findIndexByString())}</h2>
             <div>
-                <a href="#">Home </a>
+                <Link to="/">Home </Link>
                 /
                 <span> {history.location.pathname.slice(1, findIndexByString())}</span>
             </div>

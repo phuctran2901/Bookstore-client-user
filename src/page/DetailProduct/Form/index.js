@@ -14,7 +14,7 @@ export const Form = (props) => {
     const onSubmitFormReview = (data) => {
         if (data.cookies) localStorage.setItem("userReview", JSON.stringify({ name: data.name, email: data.email }));
         delete data.cookies;
-        if (rating == 0) toast.error("Vui lòng chọn số sao!", {
+        if (rating === 0) toast.error("Vui lòng chọn số sao!", {
             position: "top-center",
             autoClose: 3000,
             closeButton: true
