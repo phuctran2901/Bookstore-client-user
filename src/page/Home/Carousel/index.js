@@ -14,7 +14,7 @@ export const CarouselP = () => {
             <div>
                 <img
                     className="carousel-img"
-                    src="http://vietchiase.net/wp-content/uploads/2020/05/review-sach-hay-5-centimet-tren-giay.jpg"
+                    src="https://vietchiase.net/wp-content/uploads/2020/05/review-sach-hay-5-centimet-tren-giay.jpg"
                     alt="5 centimet trên giây"
                 />
                 <div className="carousel-content">
