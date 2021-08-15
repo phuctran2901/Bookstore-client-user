@@ -64,7 +64,6 @@ export const Account = () => {
             "Authorization": `Bearer ${sessionStorage.getItem("token")}`
         })
         setIsLoading(false)
-        console.log(data);
         if (data) return data;
         else return [];
     }
@@ -145,8 +144,8 @@ export const Account = () => {
                             <div className="control-avatar">
                                 <img src={user.image} alt={user._id} />
                                 <div>
-                                    <p className="control-title">Trần Hoàng Phúc</p>
-                                    <p className="control-edit"><FiEdit />Sửa hồ sơ</p>
+                                    <p className="control-title">{`${user.firstName} ${user.lastName}`}</p>
+                                    <p className="control-edit" onClick={() => setStatusProfile(true)}><FiEdit />Sửa hồ sơ</p>
                                 </div>
                             </div>
                             <p className="control-main" onClick={() => setActive({ profile: true, orders: false, orderDetail: false })}><FiUser color="blue" className="control-main_icon" />Tài khoản của tôi</p>

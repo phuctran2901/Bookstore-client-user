@@ -292,7 +292,7 @@ export const setSubTotalCart = (subTotal) => {
 
 export const addProductToCartRequest = async (product, quantity) => {
     let id = product._id;
-    const { data } = await callAPI("/user/cart", "POST", { product: id, quantity: quantity, price: product.price }, {
+    const { data } = await callAPI("/user/cart", "POST", { product: id, quantity: quantity, price: product.price - (product.price * (product.sale > 0 ? product.sale / 100 : 1)) }, {
         "Authorization": `Bearer ${sessionStorage.getItem("token")}`
     })
     if (data.status === "success") return data;

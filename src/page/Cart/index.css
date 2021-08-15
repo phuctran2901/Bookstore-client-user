@@ -9,6 +9,7 @@
     position: absolute;
     cursor: pointer;
     margin-right: 10px;
+    z-index: 10;
 }
 
 .cart-remove span:nth-child(1) {
@@ -46,6 +47,14 @@
     list-style: none;
     padding: 20px 0;
     border-bottom: 1px solid #edf3f4;
+}
+.cart-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.cart-subTotal-moblie {
+    display: none;
 }
 .cart-thumnail {
     margin: 0 10px;
@@ -193,6 +202,9 @@
     .cart-item {
         align-items: flex-start;
     }
+    .cart-content {
+        display: block;
+    }
     .cart-thumnail img {
         width: 90px;
         height: 100px;
@@ -211,11 +223,13 @@
         display: none;
     }
     .cart-subTotal-moblie {
+        display: block;
         font-weight: bold;
         font-size: 1.3rem;
     }
     .cart-name {
         margin-bottom: 10px;
+        padding-right: 40px;
     }
     .cart-submit {
         padding-top: 10px;
@@ -226,6 +240,7 @@
         width: 100%;
     }
     .cart-remove {
+        z-index: 10;
         right: -10px;
         top: 30px;
     }

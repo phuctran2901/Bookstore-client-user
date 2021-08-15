@@ -62,7 +62,7 @@ export const DetailProduct = () => {
         }
     }, [params.id])
     const onSubmitReview = (data) => {
-        if (user.id) {
+        if (user._id) {
             addReviewRequest(dispatch, data, product._id);
         } else {
             toast("Hãy đăng nhập để thêm review", toastConfig);

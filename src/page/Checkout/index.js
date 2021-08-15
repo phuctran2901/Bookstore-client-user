@@ -43,21 +43,21 @@ export const Checkout = () => {
     }
     const getListCity = async () => {
         const { data } = await axios({
-            url: "https://api.mysupership.vn/v1/partner/areas/province",
+            url: "https://vapi.vnappmob.com/api/province",
             method: "GET"
         })
         return data.results;
     }
     const getListDistrict = async (idCity) => {
         const { data } = await axios({
-            url: `https://api.mysupership.vn/v1/partner/areas/district?province=${idCity}`,
+            url: `https://vapi.vnappmob.com/api/province/district/${idCity}`,
             method: "GET"
         })
         return data.results;
     }
     const getListWard = async (idDistrict) => {
         const { data } = await axios({
-            url: `https://api.mysupership.vn/v1/partner/areas/commune?district=${idDistrict}`,
+            url: `https://vapi.vnappmob.com/api/province/ward/${idDistrict}`,
             method: "GET"
         })
         return data.results;
@@ -161,7 +161,7 @@ export const Checkout = () => {
                                     <select onChange={handleOnChangeCity}>
                                         <option value="0">Chọn tỉnh/thành phố</option>
                                         {listCity.map((city) => {
-                                            return <option key={city.code} value={city.code}>{city.name}</option>
+                                            return <option key={city.province_id} value={city.province_id}>{city.province_name}</option>
                                         })}
                                     </select>
                                 </div>
@@ -171,7 +171,7 @@ export const Checkout = () => {
                                         <option>Chọn quận/huyện</option>
                                         {listDistrict.map(district => {
                                             return (
-                                                <option key={district.code} value={district.code}>{district.name}</option>
+                                                <option key={district.district_id} value={district.district_id}>{district.district_name}</option>
                                             )
                                         })}
                                     </select>
@@ -182,7 +182,7 @@ export const Checkout = () => {
                                         <option>Chọn phường/xã</option>
                                         {listWard.map(ward => {
                                             return (
-                                                <option key={ward.code} value={ward.code}>{ward.name}</option>
+                                                <option key={ward.ward_id} value={ward.ward_id}>{ward.ward_name}</option>
                                             )
                                         })}
                                     </select>
