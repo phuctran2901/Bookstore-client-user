@@ -8,7 +8,7 @@ export const FilterPrice = (props) => {
         max: 500000
     });
     const onReset = () => {
-        setPaginate({ limit: 9, page: 1 });
+        setPaginate({ page: 1, limit: 9 });
         setInitPrice({ min: 0, max: 500000 });
     }
     return (

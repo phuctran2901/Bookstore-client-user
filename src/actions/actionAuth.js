@@ -101,6 +101,10 @@ export const updateUserRequest = async (dispatch, formData) => {
     })
     if (data) {
         dispatch(setUser(data.user))
+        sessionStorage.setItem("firstName", data.user.firstName);
+        sessionStorage.setItem("lastName", data.user.lastName);
+        sessionStorage.setItem("image", data.user.image);
+        sessionStorage.setItem("userID", data.user._id);
         return false;
     }
     return false;

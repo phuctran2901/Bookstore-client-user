@@ -4,6 +4,7 @@
     margin-top: auto;
     align-items: center;
     padding: 0;
+    margin: 40px 0;
 }
 .container-pagination li {
     list-style: none;
@@ -25,9 +26,4 @@
 .container-pagination .control-pagination:last-child {
     font-size: 1.6rem;
     margin-left: auto;
-}
-@media only screen and (max-width: 576px) {
-    .container-pagination {
-        margin: 40px 0;
-    }
 }

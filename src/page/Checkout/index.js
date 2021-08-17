@@ -144,7 +144,7 @@ export const Checkout = () => {
         <div className="checkout_wrap">
             <Container fluid>
                 <Row>
-                    <Col lg={7}>
+                    <Col lg={6} xl={7}>
                         <div className="billing_wrap">
                             <h3>Thông tin thanh toán</h3>
                             <form className="billing-form" onSubmit={handleSubmit(onSubmitForm)}>
@@ -214,7 +214,7 @@ export const Checkout = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col lg={5}>
+                    <Col lg={6} xl={5}>
                         <div className="checkout-order-review">
                             <h3>Đơn hàng của bạn</h3>
                             <div className="order-review_wrap">

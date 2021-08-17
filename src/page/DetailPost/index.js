@@ -57,6 +57,7 @@ export const DetailPost = () => {
     }
     const onDeleteComment = (idCmt, idPost) => {
         deleteCommentRequest(dispatch, idCmt, idPost);
+        setShowForm("");
     }
     return (
         <div className="blog-detail">
@@ -139,12 +140,12 @@ export const DetailPost = () => {
                                                     <ul className="blog-comment_list">
                                                         {cmt?._id.reply?.map(rl => {
                                                             return (
-                                                                <li className="blog-comment_item" key={rl._id}>
-                                                                    <img src={rl.avatar} alt="Ảnh đại diện" />
+                                                                <li className="blog-comment_item" key={rl._id || rl._idReply._id}>
+                                                                    <img src={rl._idReply.author.image} alt="Ảnh đại diện" />
                                                                     <div className="blog-comment_box--reply">
-                                                                        <p className="blog-comment_author">{rl.fullName}</p>
-                                                                        <p className="blog-comment_date">{new Date(rl.date).toLocaleString()}</p>
-                                                                        <p className="blog-comment_content">{rl.content}</p>
+                                                                        <p className="blog-comment_author">{`${rl._idReply.author.firstName} ${rl._idReply.author.lastName}`}</p>
+                                                                        <p className="blog-comment_date">{new Date(rl._idReply.createdAt).toLocaleString()}</p>
+                                                                        <p className="blog-comment_content">{rl._idReply.content}</p>
                                                                     </div>
                                                                 </li>
                                                             )

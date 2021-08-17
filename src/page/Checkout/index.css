@@ -206,3 +206,21 @@
         padding: 10px;
     }
 }
+@media only screen and (max-width: 1064px) {
+    .checkout-coupon {
+        width: 100%;
+    }
+    .checkout-coupon button {
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    .checkout-coupon input {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 1300px) {
+    .checkout-coupon {
+        width: 100%;
+    }
+}

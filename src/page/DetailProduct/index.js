@@ -49,7 +49,7 @@ export const DetailProduct = () => {
         arrows: false,
         infinite: true,
         easing: "ease",
-        indicators: (i) => <img key={product.urls ? product.urls[i]._id : ""} className="slide-image_active" src={product.urls ? product.urls[i].url : ""} alt={product.title} />
+        indicators: (i) => <img key={product.urls ? product.urls[i]._id : i + 1} className="slide-image_active" src={product.urls ? product.urls[i].url : ""} alt={product.title} />
     };
     useEffect(() => {
         getOneProductRequest(dispatch, params.id);
@@ -223,7 +223,7 @@ export const DetailProduct = () => {
                                 <ul className="review-tab_commentList">
                                     {review.map((rv, index) => {
                                         return (
-                                            <li className="review-tab_commentItem" key={rv?._id || index}>
+                                            <li className="review-tab_commentItem" key={rv?._id}>
                                                 <img className="commentItem-avartar" alt="Ảnh đại diện" src={rv.userID.image} />
                                                 <div className="commentItem-text">
                                                     <div className="commentItem-meta-star">

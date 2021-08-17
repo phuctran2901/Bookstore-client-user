@@ -10,8 +10,17 @@ export const comment = (state = initialState, action) => {
             state.unshift({ _id: { ...action.cmt, reply: [], createdAt: Date.now(), _id: action.id } });
             return [...state];
         case types.REPLY_COMMENT:
-            const cmt = state.filter(t => t._id._id === action.id);
-            cmt[0]._id.reply.unshift({ ...action.cmt, _id: Math.random().toString(36) })
+            const cmt = state.filter(t => t._id._id === action.idCmt);
+            const reply = {
+                _idReply: {
+                    ...action.replyCmt, author: {
+                        firstName: `${sessionStorage.getItem("firstName")}`,
+                        lastName: `${sessionStorage.getItem("lastName")}`,
+                        image: `${sessionStorage.getItem("image")}`
+                    }
+                }
+            }
+            cmt[0]._id.reply.unshift(reply);
             return [...state];
         case types.DELETE_CMT:
             state = state.filter(cmt => cmt._id._id !== action.idCmt);

@@ -8,7 +8,7 @@ import { Orders } from "./Orders";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { toastConfig } from "../../constants/configToast";
-import { updateUserRequest } from '../../actions/actionAuth';
+import { setUser, updateUserRequest } from '../../actions/actionAuth';
 import { Loader } from '../../components/Loader';
 import { useHistory } from 'react-router-dom';
 import callAPI from '../../untils/callAPI';

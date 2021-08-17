@@ -41,7 +41,7 @@ export const CartItem = (props) => {
                 />
             </div>
             <div className="cart-content">
-                <Link className="cart-name">{cart?.product.title}</Link>
+                <Link className="cart-name" to={`/Detail-product/${cart?.product._id}`}>{cart?.product.title}</Link>
                 <div className="cart-price">
                     {cart?.product.sale > 0 ? <p className="cart-price_sale">{formatNumber(cart?.product.price)}₫</p> : ""}
                     {cart?.product.sale > 0 ? <p className="cart-price_real">{formatNumber(cart?.product.price - (cart?.product.price * cart?.product.sale / 100))}₫</p> : <p className="cart-price_real">{formatNumber(cart?.product.price)}đ</p>}

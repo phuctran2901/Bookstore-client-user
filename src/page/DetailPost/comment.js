@@ -6,7 +6,7 @@ export const Comment = (props) => {
     const { closeButton, closeCmt, onSubmitCmt, idCmt, loadingCmt } = props;
     const onSubmit = (data) => {
         if (closeButton) {
-            data.date = Date.now();
+            data.userID = sessionStorage.getItem("userID");
             onSubmitCmt(data, idCmt)
         } else {
             onSubmitCmt(data);

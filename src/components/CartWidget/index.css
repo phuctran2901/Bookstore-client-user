@@ -188,7 +188,7 @@
     background-color: #757575;
 }
 @media only screen and (max-width: 576px) {
-    .cartWidget-wrap {
+    .cartWidget-wrap.active {
         width: 80%;
     }
     .cartWidget-item_name a {
@@ -196,5 +196,11 @@
     }
     .cartWidget-item_price {
         font-size: 0.9rem;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .cartWidget-body {
+        min-height: 400px;
+        max-height: 400px;
     }
 }

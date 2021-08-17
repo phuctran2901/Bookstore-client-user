@@ -90,9 +90,6 @@ export const Header = () => {
                                     />
                                 )
                             })}
-                            {!user ? <li className={`navbar-item navbar-auth`}>
-                                <Link to={"/Auth"}>Đăng nhập</Link>
-                            </li> : ""}
                         </ul>
                     </nav>
                     <div className="header-account-cart">

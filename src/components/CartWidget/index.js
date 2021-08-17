@@ -50,7 +50,7 @@ export const CartWidget = () => {
                 </p>
                 <div className="cartWidget-btn">
                     <Link to="/Cart" onClick={() => dispatch(toggleCart(false))}>Xem giỏ hàng</Link>
-                    <Link to="/Checkout">Thanh toán</Link>
+                    <Link to="/Checkout" onClick={() => dispatch(toggleCart(false))} >Thanh toán</Link>
                 </div>
             </div>
         </div>

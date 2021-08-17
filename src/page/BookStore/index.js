@@ -25,21 +25,27 @@ export const BookStore = () => {
         page: 1,
         limit: 9
     });
+    const isEmptyObject = (obj) => {
+        if (!obj) obj = {};
+        return Object.keys(obj).length === 0;
+    }
     const totalPage = useSelector(state => state.products.totalPage);
     useEffect(() => {
         window.scrollTo({
             top: 300,
             behavior: "smooth",
         });
-        if (!history.location.state) {
+        if (isEmptyObject(history.location.state)) {
             fetchProductByPageRequest(dispatch, paginate);
         }
+    }, [paginate])
+    useEffect(() => {
         if (history.location.state && history.location.state.status) {
             let state = { ...history.location.state };
             delete state.status;
             history.replace({ ...history.location, state });
         }
-    }, [paginate])
+    }, [history.location]);
     const onChangePaginate = (page) => {
         setPaginate({ ...paginate, page })
     }
@@ -52,11 +58,15 @@ export const BookStore = () => {
             {isLoading ? "" : <Loader />}
             <Container>
                 <Row>
-                    <Col lg={9} md={10} xs={12}>
+                    <Col lg={8} md={12} xs={12} xl={9}>
                         <Row>
                             {products.map(product => {
                                 return (
-                                    <Col lg={4} key={product._id} >
+                                    <Col
+                                        xl={4}
+                                        lg={6}
+                                        md={6}
+                                        key={product._id} >
                                         <Card product={product} />
                                     </Col>
                                 )
@@ -76,7 +86,7 @@ export const BookStore = () => {
                             totalPage={totalPage}
                         />}
                     </Col>
-                    <Col lg={3} md={2} xs={12}>
+                    <Col lg={4} md={12} xs={12} xl={3}>
                         <FilterPrice
                             onSubmitFilterPrice={onSubmitFilterPrice}
                             setPaginate={setPaginate}

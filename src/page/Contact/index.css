@@ -96,7 +96,7 @@
 @media only screen and (max-width: 576px) {
     .contact-main {
         display: block;
-        margin-top: 50px;
+        margin-top: 100px;
     }
     .contact-main div {
         padding: 0;
@@ -108,5 +108,10 @@
     a {
         display: block;
         width: 100%;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .contact-main {
+        margin-top: 100px;
     }
 }

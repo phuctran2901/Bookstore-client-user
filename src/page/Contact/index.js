@@ -31,7 +31,7 @@ export const Contact = () => {
             <Container>
                 <div className="form-wrap">
                     <Row>
-                        <Col xs={12}>
+                        <Col xs={12} lg={6}>
                             <form onSubmit={onSubmitForm}>
                                 <div className="form-group_contact">
                                     <input type="text" placeholder="Tên của bạn.." name="name" />
@@ -44,13 +44,12 @@ export const Contact = () => {
                                 </div>
                                 <div>
                                     <Button
-                                        width="30%"
                                         label={isLoading ? <Spinner /> : "Gửi"}
                                     />
                                 </div>
                             </form>
                         </Col>
-                        <Col xs={12}>
+                        <Col xs={12} lg={6}>
                             <div className="contact-main">
                                 <div>
                                     <span><AiFillPhone /></span>

@@ -56,6 +56,7 @@ export const addCmtPostRequest = (dispatch, cmt, idPost) => {
         .then(res => res.data)
         .then(data => {
             cmt.author = {
+                _id: `${sessionStorage.getItem("userID")}`,
                 image: `${sessionStorage.getItem("image")}`,
                 firstName: `${sessionStorage.getItem("firstName")}`,
                 lastName: `${sessionStorage.getItem("lastName")}`,
@@ -69,15 +70,16 @@ export const addCmtPostRequest = (dispatch, cmt, idPost) => {
 }
 
 
-const replyCmt = (cmt, id) => {
+const replyCmt = (replyCmt, idCmt) => {
     return {
         type: types.REPLY_COMMENT,
-        cmt,
-        id
+        replyCmt,
+        idCmt
     }
 }
 
 export const replyCmtRequest = (dispatch, cmt, id) => {
+    console.log(cmt);
     dispatch(isLoadingCmt(true));
     return callAPI(`/post/replyCmt/${id}`, "POST", cmt, {
         "Authorization": `Bearer ${sessionStorage.getItem("token")}`
@@ -85,9 +87,7 @@ export const replyCmtRequest = (dispatch, cmt, id) => {
         .then(res => res.data)
         .then(data => {
             if (data.status === "success") {
-                cmt.fullName = `${sessionStorage.firstName} ${sessionStorage.lastName}`;
-                cmt.avatar = `${sessionStorage.image}`;
-                dispatch(replyCmt(cmt, id));
+                dispatch(replyCmt(data.replyCmt, id));
                 dispatch(isLoadingCmt(false));
             }
         })
